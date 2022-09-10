@@ -1,34 +1,33 @@
-import userEvent from "@testing-library/user-event";
 import { useState, useEffect } from "react";
 
-function App() {
-  const [counter, setValue] = useState(0);
-  const [keyword, setKeyword] = useState("");
-  const onClick = () => setValue((prev) => prev + 1);
-  const onChange = (event) => setKeyword(event.target.value);
+function Hello() {
+  function byFn() {
+    console.log("bye");
+  }
+  function hiFn() {
+    console.log("created!");
+    return byFn;
+  }
+  useEffect(() => {
+    console.log("h1");
+    return () => console.log("bye!");
+  }, []);
+  useEffect(function () {
+    console.log("h1");
+    return function () {
+      console.log("bye!");
+    };
+  }, []);
+  return <h1>Hello</h1>;
+}
 
-  useEffect(() => {
-    console.log("I run only once.");
-  }, []); //[]가 비어 있기 때문에 리액트가 보고 있는 것이 없어서 한번만 실행됨
-  useEffect(() => {
-    console.log("I run when 'keyword' changes");
-  }, [keyword]); //[]안의 keyword가 변화 될때마다 실행됨
-  useEffect(() => {
-    console.log("I run when 'counter' changes");
-  }, [counter]);
-  useEffect(() => {
-    console.log("I run when 'keyword' & 'counter' changes");
-  }, [keyword, counter]);
+function App() {
+  const [showing, setShowing] = useState(false);
+  const onClick = () => setShowing((prev) => !prev);
   return (
     <div>
-      <input
-        value={keyword}
-        onChange={onChange}
-        type="text"
-        placeholder="Search here..."
-      />
-      <h1>{counter}</h1>
-      <button onClick={onClick}>Click me</button>
+      {showing ? <Hello /> : null}
+      <button onClick={onClick}>{showing ? "Hide" : "Show"}</button>
     </div>
   );
 }
