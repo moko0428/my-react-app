@@ -100,4 +100,7 @@ react.js는 아주 간단한 방법으로 작동된다.
 
 1. state를 변화시킬 때 component를 재실행 시킨다. 모든 코드가 재실행되는 것이다.
    - UI의 관점으로 보면, 새로운 데이터가 들어올 때마다 자동으로 새로고침되는 것은 좋지만, 문제는 어떤 코드들은 반복실행하면 안될 수도 있다. -> useEffect을 사용하는 이유
-2.
+
+> react route
+
+npm install react-router-dom
