@@ -4,7 +4,9 @@ import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { listPageReLoading, focusNav } from "../atom/Atoms";
 import styles from "./Nav.module.css";
 import navList from "../atom/NavList";
-
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaNeos } from "react-icons/fa";
 function Nav() {
   let last_known_scroll_position = 0;
   let ticking = false;
@@ -61,7 +63,7 @@ function Nav() {
       >
         <div className={styles.title}>
           <Link to="/react-movie" onClick={() => setFocusPath("")}>
-            <i class="fab fa-neos"></i>
+            <FaNeos className={styles.title__i} />
             <strong>ETFLEX</strong>
           </Link>
         </div>
@@ -89,12 +91,12 @@ function Nav() {
         <ul className={styles.icon__list}>
           <li>
             <a href="https://twitter.com/?lang=ko" target="_blank">
-              <i class="fab fa-twitter-square"></i>
+              <FaTwitter className={styles.i} />
             </a>
           </li>
           <li>
             <a href="https://www.instagram.com/" target="_blank">
-              <i class="fab fa-instagram"></i>
+              <FaInstagram className={styles.i} />
             </a>
           </li>
         </ul>

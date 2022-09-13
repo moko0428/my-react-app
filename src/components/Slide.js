@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { IconName } from "react-icons/fa";
 import styles from "./Slide.module.css";
 import Movie from "./Movie";
 import Loading from "./Loading";
-
+import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 function Slide({ ytsApi }) {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
@@ -62,10 +64,10 @@ function Slide({ ytsApi }) {
       {loading ? null : (
         <div>
           <button class={styles.left} onClick={onClickL}>
-            <i class="fas fa-caret-square-left"></i>
+            <FaArrowAltCircleLeft className={styles.btnLeft__i} />
           </button>
           <button class={styles.right} onClick={onClickR}>
-            <i class="fas fa-caret-square-right"></i>
+            <FaArrowAltCircleRight className={styles.btnRigth__i} />
           </button>
         </div>
       )}
