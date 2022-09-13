@@ -1,17 +1,28 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import Home from "./router/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Detail from "./router/Detail";
+import Home from "./router/Home";
+import List from "./router/List";
+import Nav from "./components/Nav";
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from "recoil";
+
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/movie:id" element={<Detail />} />
-        <Route>
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
+    <RecoilRoot>
+      <Router>
+        <Nav />
+        <Routes>
+          <Route path="/page/:detail/:num" element={<List />} />
+          <Route path="/movie/:id" element={<Detail />} />
+          <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
+        </Routes>
+      </Router>
+    </RecoilRoot>
   );
 }
 
