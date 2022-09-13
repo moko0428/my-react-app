@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styles from "./Movie.module.css";
 
-function Movie({ id, coverImg, title, summary, genres, movie_style }) {
+function Movie({ id, coverImg, title, summary, genres, movie_style, year }) {
   if (coverImg == "") {
     return null;
   }
@@ -15,7 +15,7 @@ function Movie({ id, coverImg, title, summary, genres, movie_style }) {
             {title.length > 50 ? `${title.slice(0, 50)}...` : title}
           </Link>
         </h2>
-        {/* <h3 className={styles.movie__year}>{year}</h3> */}
+        <h3 className={styles.movie__year}>{year}</h3>
         <p className={styles.movie__summary}>
           {summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}
         </p>

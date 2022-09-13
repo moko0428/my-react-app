@@ -62,7 +62,7 @@ function Nav() {
         className={styles.container}
       >
         <div className={styles.title}>
-          <Link to="/react-movie" onClick={() => setFocusPath("")}>
+          <Link to="/my-react-app" onClick={() => setFocusPath("")}>
             <FaNeos className={styles.title__i} />
             <strong>ETFLEX</strong>
           </Link>
@@ -78,7 +78,7 @@ function Nav() {
                     focusPath !== path
                       ? null
                       : {
-                          color: "#dcb0ff",
+                          color: "#7f8df4",
                         }
                   }
                 >

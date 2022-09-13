@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
 import styles from "./Home.module.css";
 import Movie from "../components/Movie";
-import Slide from "../components/Slide";
 import navList from "../atom/NavList";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -12,17 +11,12 @@ function Home() {
     <div className={styles.container}>
       {navList.map((slide) => {
         return (
-          <div className={styles.slide__box}>
-            <h3 className={styles.title}>
-              <Link to={`/page/${slide.path}/1`}>
-                <FaExternalLinkAlt />
-                <span>{slide.title} Movie</span>
-              </Link>
-            </h3>
-            <Slide
-              ytsApi={`https://yts.mx/api/v2/list_movies.json?limit=10&${slide.path}&sort_by=year`}
-            />
-          </div>
+          <h3 className={styles.title}>
+            <Link to={`/page/${slide.path}/1`}>
+              <FaExternalLinkAlt />
+              <span>{slide.title} Movie</span>
+            </Link>
+          </h3>
         );
       })}
     </div>
