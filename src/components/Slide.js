@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { IconName } from "react-icons/fa";
 import styles from "./Slide.module.css";
 import Movie from "./Movie";
 import Loading from "./Loading";

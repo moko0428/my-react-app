@@ -1,42 +1,30 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Loading from "../components/Loading";
+import styles from "./Home.module.css";
 import Movie from "../components/Movie";
+import Slide from "../components/Slide";
+import navList from "../atom/NavList";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 function Home() {
-  const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
-  const getMovies = async () => {
-    const json = await (
-      await fetch(
-        "https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year"
-      )
-    ).json();
-    setMovies(json.data.movies);
-    setLoading(false);
-  };
-  useEffect(() => {
-    getMovies();
-  }, []);
-  console.log(movies);
-
   return (
-    <div>
-      {loading ? (
-        <h1>loading...</h1>
-      ) : (
-        <div>
-          {movies.map((movie) => (
-            <Movie
-              key={movie.id}
-              id={movie.id}
-              coverImg={movie.medium_cover_image}
-              title={movie.title}
-              summary={movie.summary}
-              genres={movie.genres}
+    <div className={styles.container}>
+      {navList.map((slide) => {
+        return (
+          <div className={styles.slide__box}>
+            <h3 className={styles.title}>
+              <Link to={`/page/${slide.path}/1`}>
+                <FaExternalLinkAlt />
+                <span>{slide.title} Movie</span>
+              </Link>
+            </h3>
+            <Slide
+              ytsApi={`https://yts.mx/api/v2/list_movies.json?limit=10&${slide.path}&sort_by=year`}
             />
-          ))}
-        </div>
-      )}
+          </div>
+        );
+      })}
     </div>
   );
 }
