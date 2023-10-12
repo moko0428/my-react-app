@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./Movie.module.css";
 
 function Movie({ id, coverImg, title, summary, genres, movie_style, year }) {
-  if (coverImg == "") {
+  if (coverImg === "") {
     return null;
   }
   return (

@@ -3,13 +3,7 @@ import Detail from "./router/Detail";
 import Home from "./router/Home";
 import List from "./router/List";
 import Nav from "./components/Nav";
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from "recoil";
+import { RecoilRoot } from "recoil";
 
 function App() {
   return (

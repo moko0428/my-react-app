@@ -22,9 +22,9 @@ function Point({
             </a>
           </h1>
           <ul>
-            <li>Rating {rating}</li>
-            <li>Runtime {runtime}</li>
-            <li>Download {download_count}</li>
+            <li>레이팅 {rating}</li>
+            <li>런타임 {runtime}</li>
+            <li>다운로드 수 {download_count}</li>
             <li>
               Genres
               <ul>
