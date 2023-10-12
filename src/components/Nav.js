@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { listPageReLoading, focusNav } from "../atom/Atoms";
 import styles from "./Nav.module.css";
 import navList from "../atom/NavList";
@@ -64,7 +64,7 @@ function Nav() {
         <div className={styles.title}>
           <Link to="/my-react-app" onClick={() => setFocusPath("")}>
             <FaNeos className={styles.title__i} />
-            <strong>ETFLEX</strong>
+            <strong>JUNFLEX</strong>
           </Link>
         </div>
         <ul className={styles.option__list}>
@@ -78,7 +78,7 @@ function Nav() {
                     focusPath !== path
                       ? null
                       : {
-                          color: "#7f8df4",
+                          color: "#FF9689",
                         }
                   }
                 >
@@ -95,7 +95,7 @@ function Nav() {
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/" target="_blank">
+            <a href="https://www.instagram.com/feb.25jy/" target="_blank">
               <FaInstagram className={styles.i} />
             </a>
           </li>

@@ -1,16 +1,12 @@
-:root {
-  --green-color-3: #590bf5;
-  --green-color-2: #3a6bff;
-  --green-color-1: #222961;
-}
-
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* 헤더 메뉴 가운데 */
+  align-items: center; /* 헤더 메뉴 리스트 수직 가운데*/
   padding: 4px 64px;
   background-color: transparent; /*투명도*/
+  background: linear-gradient(270deg, #ffdbcb, #fcb9a9);
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 10;
@@ -31,21 +27,22 @@
 }
 .title__i {
   font-size: 32px;
-  color: var(--green-color-1);
+  color: white;
   margin: 0 8px 0 0;
 }
 .title strong {
   font-size: 32px;
-  color: var(--green-color-1);
+  color: white;
   letter-spacing: 0.5px; /*자간 설정*/
 }
 .option__list {
   display: flex;
 }
 .option__list li a {
-  font-size: 16px;
+  font-size: 24px;
+  font-weight: 600;
   padding: 4px 12px;
-  color: var(--green-color-1);
+  color: white;
 }
 .icon__list {
   display: flex;
@@ -55,7 +52,7 @@
   padding: 4px 8px;
 }
 .icon__list li a {
-  color: var(--green-color-1);
+  color: white;
 }
 .null {
   width: 100%;
